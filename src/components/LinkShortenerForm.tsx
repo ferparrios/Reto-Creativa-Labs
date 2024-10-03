@@ -1,16 +1,15 @@
 "use client";
-import React, { useState, useCallback, Dispatch, SetStateAction } from "react";
-import { Link } from "./LinkSection";
-import { newShortenLink } from "app/api/shotLinksApi";
+import React, { useState, useCallback } from "react";
+// import { Link } from "./LinkSection";
 
-interface LinkShortenerFormProps {
-  setLinks: Dispatch<SetStateAction<Link[]>>
-}
+// interface LinkShortenerFormProps {
+//   setLinks: Dispatch<SetStateAction<Link[]>>
+// }
 
-export const LinkShortenerForm = ({setLinks}:LinkShortenerFormProps) => {
+export const LinkShortenerForm = () => {
   const [link, setLink] = useState<string>("");
   // const [linksList, setLinksList] = useState([])
-  let linkList = []
+  // let linkList = []
   const [showError, setShowError] = useState(false);
   const [success, setSuccess] = useState(false); 
 

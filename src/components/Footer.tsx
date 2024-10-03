@@ -62,9 +62,8 @@ export const Footer = () => {
 
       <div className="flex justify-between p-8 lg:w-3/12 lg:py-0 lg:px-12">
         {icons.map((icon) => (
-          <Link href={icon.route} target="_blank">
+          <Link href={icon.route} target="_blank" key={icon.key}>
             <Image
-              key={icon.key}
               priority
               src={icon.src}
               width={31}

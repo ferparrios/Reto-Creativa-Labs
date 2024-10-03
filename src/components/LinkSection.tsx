@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { LinkShortenerForm } from "./LinkShortenerForm";
-import { ShortenedLinksList } from "./ShortenedLinksList";
 import { AdvancedStatistics } from "./AdvancedStatistics";
 
 export interface Link {
@@ -10,17 +9,17 @@ export interface Link {
 }
 
 export const LinkSection = () => {
-  const [links, setLinks] = useState<Link[]>([]);
+  // const [links, setLinks] = useState<Link[]>([]);
   // const dummyLinks = [
   //   { original: "https://brimvoid.com", shortened: "https://re.link/siduia" },
   //   { original: "https://brimvoid.com", shortened: "https://re.link/siduia" },
   // ];
   return (
     <section className="mx-auto bg-gray-100 max-w-maxxl">
-      <LinkShortenerForm setLinks={setLinks}/>
+      <LinkShortenerForm />
 
       <div className="bg-gray-100 pt-40 lg:pt-40 ">
-        {links.length > 0 && (
+        {/* {links.length > 0 && (
           <div className="mt-8 w-10/12 mx-auto">
             {links.map((link, idx) => (
               <div
@@ -44,7 +43,7 @@ export const LinkSection = () => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
         {/* <ShortenedLinksList links={linkToBeShorted} /> */}
         <AdvancedStatistics />
       </div>
