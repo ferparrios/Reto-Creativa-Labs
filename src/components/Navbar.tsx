@@ -4,30 +4,35 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const MobileMenuModal: React.FC<{ onClose: () => void }> = ({ onClose }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center lg:hidden">
-    <div className="bg-white rounded-lg p-6 w-10/12 mx-auto text-center">
-      <button
-        className="absolute top-4 right-4 text-black"
-        onClick={onClose}
-        aria-label="close menu"
-      >
-        &times;
-      </button>
+  
+  <div className="px-4 sm:px-6 w-full">
+    <div className="bg-footer-bg rounded-lg p-6 w-11/12  text-center lg:hidden fixed z-50">
+      
       <ul className="space-y-4 text-black">
-        <li>Features</li>
-        <li>Pricing</li>
-        <li>Resources</li>
+        <Link href={"/features"} onClick={onClose}>
+          <li className="text-white font-bold text-xl my-8">Features</li>
+        </Link>
+        <Link href={"/pricing"} onClick={onClose}>
+          <li className="text-white font-bold text-xl my-8">Pricing</li>
+        </Link>
+        <Link href={"/resources"} onClick={onClose}>
+          <li className="text-white font-bold text-xl my-8">Resources</li>
+        </Link>
+        <hr />
+        <Link href={"/login"} onClick={onClose}>
+          <li>
+            <button className="mr-4 text-white font-bold text-xl my-8">Login</button>
+          </li>
+        </Link>
         <li>
-          <button className="mr-4 text-black">Login</button>
-        </li>
-        <li>
-          <button className="bg-teal-500 text-white py-2 px-4 rounded-full">
+          <button className="bg-teal-500 text-white font-bold text-xl py-4 px-6 rounded-full">
             Sign Up
           </button>
         </li>
       </ul>
     </div>
   </div>
+  // </div>
 );
 
 export const Navbar = () => {
@@ -40,7 +45,7 @@ export const Navbar = () => {
       <nav className="flex justify-between items-center p-6 bg-white">
         <div className="flex items-center justify-between w-4/12">
           <h1 className="text-2xl font-bold text-black">
-            <Link href={"/"}>Shortly</Link>
+            <Link href={"/"} onClick={() => setShowMenu(false)}>Shortly</Link>
           </h1>
           <ul className="hidden space-x-4 lg:flex">
             <Link href={"/features"}>
@@ -56,7 +61,9 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex lg:items-center">
-          <Link href={'/login'}><button className="mr-4 text-black">Login</button></Link>
+          <Link href={"/login"}>
+            <button className="mr-4 text-black">Login</button>
+          </Link>
           <button className="bg-teal-500 text-white py-2 px-4 rounded-full hover:bg-teal-600 checked:bg-teal-700">
             Sign Up
           </button>

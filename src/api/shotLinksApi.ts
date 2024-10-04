@@ -1,27 +1,19 @@
 import axios from "axios";
 
-const shortLinksApi = axios.create({
-  baseURL: "https://www.urlday.com/api/v1/links",
+const shortLnkApi = axios.create({
+  baseURL: "https://go-shortlinks.onrender.com/",
+  // baseURL: "http://localhost:8080",
   headers: {
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH",
-    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Type": "application/json", 
   },
 });
 
-export const newShortenLink = async (url: string) => {
+export const newShortenLink = async (url: any) => {
   try {
-    const apiKey =
-      "9Cl21FlWMEpXqE0rVBmuNSzTQp4MnjLZQC9F5My5XEeld9qxWE0GgAPPVvCa";
-    const response = await shortLinksApi.post(url, {
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-      },
-    });
-
-    console.log("Link shortened:", response.data);
+    const response = await shortLnkApi.post("/shorten", url);
+    console.log(response);
+    return response;
   } catch (error) {
-    console.error("Error shortening the link:", error);
+    console.log(error);
   }
 };
