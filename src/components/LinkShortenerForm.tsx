@@ -33,7 +33,7 @@ export const LinkShortenerForm = ({
         url: link,
       });
 
-      console.log(resp);
+      // console.log(resp);
 
       if (resp && resp.data) {
         // console.log("Shortened link:", resp.data.short_url);

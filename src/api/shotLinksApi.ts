@@ -8,7 +8,7 @@ const shortLnkApi = axios.create({
   },
 });
 
-export const newShortenLink = async (url: any) => {
+export const newShortenLink = async (url: object) => {
   try {
     const response = await shortLnkApi.post("/shorten", url);
     console.log(response);
