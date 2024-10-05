@@ -8,9 +8,10 @@ This repository contains the solution to the technical challenge proposed by Cre
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
+- [Git History](#git-history)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Aditional Notes](#aditional-notes)
+- [Video](#video)
 
 ## Description
 
@@ -52,8 +53,12 @@ The application should be available at `http://localhost:3000`.
 
 ## Technologies Used
 
-- **Frontend:** React, CSS, HTML
+- **Frontend:** React, CSS, HTML, NextJS
 - **Other Services:** Axios
+
+## Git History
+
+Because is a testing project I only manage a main branch, but in a real project we need to use different branches for a better usage, more if we work on a team, that is a better practice than all we need to implement, you can see the commits inside the repository commits.
 
 ## Project Structure
 
